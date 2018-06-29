@@ -6,24 +6,30 @@
 #include "BookerInfoTable.h"
 #include "CheckInWnd.h"
 
+//全局变量
+extern DataBase<Room> roomDB(".\\roomDB.dat");
+extern DataBase<Bill> billDB(".\\billDB.dat");
+extern int sumRoom[] = {
+	roomDB.querySum(A),
+	roomDB.querySum(B),
+	roomDB.querySum(C)
+};
+extern int sumBill[] = {
+	billDB.querySum(BOOKING),
+	billDB.querySum(CHECKIN),
+	billDB.querySum(DONE)
+};
+
 
 
 
 int main(int argc, char *argv[])
 {
 	QApplication YiTiaoDaHe(argc, argv);
+
 	/*hotel w;
-	w.show();
+	w.show();*/
 
-
-	BookerInfoTable abcd;
-	abcd.show();
-
-	RoomInfoTable a;
-	a.show();
-
-	CheckInForm as;
-	as.show();*/
 	CheckInWnd a;
 	a.show();
 

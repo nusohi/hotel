@@ -17,7 +17,7 @@ class BookerInfoTable : public QWidget
 public:
 	BookerInfoTable(QWidget *parent = Q_NULLPTR);
 	~BookerInfoTable();
-private:
+public:
 	Ui::BookerInfoTable ui;
 private:
 	void initial();

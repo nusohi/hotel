@@ -7,12 +7,6 @@
 #include "DataBase.h"
 
 
-//全局变量
-extern DataBase<Room> roomDB;
-extern DataBase<Bill> billDB;
-extern int sumRoom[];
-extern int sumBill[];
-
 
 class hotel : public QWidget
 {
@@ -23,5 +17,4 @@ public:
 
 private:
 	Ui::hotelClass ui;
-///	RoomInfoTable roomInfoTable;
 };

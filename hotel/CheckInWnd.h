@@ -5,6 +5,10 @@
 #include "RoomInfoTable.h"
 #include "BookerInfoTable.h"
 
+extern DataBase<Bill> billDB;
+extern DataBase<Room> roomDB;
+
+
 
 class CheckInWnd :public QWidget
 {
@@ -13,6 +17,11 @@ class CheckInWnd :public QWidget
 public:
 	CheckInWnd(QWidget* parent = NULL);
 	~CheckInWnd() {}
+public slots:
+	void refreshTables();
+	void onChangeModel(int state);
+	void chooseRoom(int row, int col);
+	void chooseBill(int row, int col);
 
 public:
 	CheckInForm checkInForm;

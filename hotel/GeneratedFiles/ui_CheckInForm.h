@@ -33,7 +33,6 @@ class Ui_CheckInForm
 {
 public:
     QVBoxLayout *verticalLayout_2;
-    QVBoxLayout *staticPartLayout;
     QHBoxLayout *horizontalLayout_5;
     QVBoxLayout *verticalLayout_3;
     QRadioButton *singleClientBtn;
@@ -50,13 +49,16 @@ public:
     QLineEdit *nameB;
     QLabel *label_6;
     QLineEdit *IDB;
-    QHBoxLayout *horizontalLayout_6;
+    QHBoxLayout *horizontalLayout_9;
     QHBoxLayout *horizontalLayout_3;
     QLabel *label_4;
     QComboBox *roomTypeBox;
     QHBoxLayout *horizontalLayout_4;
     QLabel *label_7;
     QComboBox *roomIDBox;
+    QHBoxLayout *horizontalLayout_6;
+    QLabel *ddhLabel;
+    QLabel *billIDLabel;
     QPushButton *bookBtn;
     QHBoxLayout *horizontalLayout_7;
     QLabel *label_3;
@@ -78,9 +80,6 @@ public:
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        staticPartLayout = new QVBoxLayout();
-        staticPartLayout->setSpacing(6);
-        staticPartLayout->setObjectName(QStringLiteral("staticPartLayout"));
         horizontalLayout_5 = new QHBoxLayout();
         horizontalLayout_5->setSpacing(6);
         horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
@@ -191,11 +190,11 @@ public:
         horizontalLayout_5->addLayout(verticalLayout);
 
 
-        staticPartLayout->addLayout(horizontalLayout_5);
+        verticalLayout_2->addLayout(horizontalLayout_5);
 
-        horizontalLayout_6 = new QHBoxLayout();
-        horizontalLayout_6->setSpacing(6);
-        horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
+        horizontalLayout_9 = new QHBoxLayout();
+        horizontalLayout_9->setSpacing(6);
+        horizontalLayout_9->setObjectName(QStringLiteral("horizontalLayout_9"));
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setSpacing(6);
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
@@ -220,7 +219,7 @@ public:
         horizontalLayout_3->addWidget(roomTypeBox);
 
 
-        horizontalLayout_6->addLayout(horizontalLayout_3);
+        horizontalLayout_9->addLayout(horizontalLayout_3);
 
         horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setSpacing(6);
@@ -243,17 +242,33 @@ public:
         horizontalLayout_4->addWidget(roomIDBox);
 
 
-        horizontalLayout_6->addLayout(horizontalLayout_4);
+        horizontalLayout_9->addLayout(horizontalLayout_4);
+
+        horizontalLayout_6 = new QHBoxLayout();
+        horizontalLayout_6->setSpacing(6);
+        horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
+        ddhLabel = new QLabel(CheckInForm);
+        ddhLabel->setObjectName(QStringLiteral("ddhLabel"));
+
+        horizontalLayout_6->addWidget(ddhLabel);
+
+        billIDLabel = new QLabel(CheckInForm);
+        billIDLabel->setObjectName(QStringLiteral("billIDLabel"));
+
+        horizontalLayout_6->addWidget(billIDLabel);
+
+
+        horizontalLayout_9->addLayout(horizontalLayout_6);
 
         bookBtn = new QPushButton(CheckInForm);
         bookBtn->setObjectName(QStringLiteral("bookBtn"));
         sizePolicy.setHeightForWidth(bookBtn->sizePolicy().hasHeightForWidth());
         bookBtn->setSizePolicy(sizePolicy);
 
-        horizontalLayout_6->addWidget(bookBtn);
+        horizontalLayout_9->addWidget(bookBtn);
 
 
-        staticPartLayout->addLayout(horizontalLayout_6);
+        verticalLayout_2->addLayout(horizontalLayout_9);
 
         horizontalLayout_7 = new QHBoxLayout();
         horizontalLayout_7->setSpacing(6);
@@ -324,10 +339,7 @@ public:
         horizontalLayout_7->addWidget(checkInBtn);
 
 
-        staticPartLayout->addLayout(horizontalLayout_7);
-
-
-        verticalLayout_2->addLayout(staticPartLayout);
+        verticalLayout_2->addLayout(horizontalLayout_7);
 
 
         retranslateUi(CheckInForm);
@@ -352,6 +364,8 @@ public:
          << QApplication::translate("CheckInForm", "\345\245\227\346\210\277", Q_NULLPTR)
         );
         label_7->setText(QApplication::translate("CheckInForm", "\346\210\277\351\227\264\345\217\267", Q_NULLPTR));
+        ddhLabel->setText(QApplication::translate("CheckInForm", "\350\256\242\345\215\225\345\217\267\357\274\232", Q_NULLPTR));
+        billIDLabel->setText(QString());
         bookBtn->setText(QApplication::translate("CheckInForm", "\351\242\204\350\256\242", Q_NULLPTR));
         label_3->setText(QApplication::translate("CheckInForm", "\345\205\245\344\275\217\345\244\251\346\225\260", Q_NULLPTR));
         label_11->setText(QApplication::translate("CheckInForm", "\344\275\231\351\207\217:", Q_NULLPTR));

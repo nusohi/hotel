@@ -134,7 +134,6 @@ T** DataBase<T>::query(BillStatus billStatus) {
 		}
 	}
 	for (int j = i; j < sum; j++) {
-		delete bills[j];
 		bills[j] = NULL;
 	}
 	return bills;
