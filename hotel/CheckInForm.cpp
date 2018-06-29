@@ -1,9 +1,6 @@
 #include "CheckInForm.h"
 #include <qtimer.h>
 
-extern DataBase<Bill> billDB;
-extern DataBase<Room> roomDB;
-extern int sumRoom[];
 
 
 
@@ -45,6 +42,10 @@ void CheckInForm::initial() {
 
 	//计时器	供noteLabel用
 	timer = new QTimer(this);
+
+	//隐藏 billIDLabel
+	ui.billIDLabel->setVisible(false);
+	ui.ddhLabel->setVisible(false);
 }
 
 //预订
@@ -63,6 +64,7 @@ void CheckInForm::book() {
 			RoomType roomType = RoomType(ui.roomTypeBox->currentText().toInt());
 			RoomBase room(roomID, roomType);
 			roomDB.query(roomID)->setStatus(BOOKED);		//很重要
+			sumBill[BOOKING]++;								//也很重要
 			int stayDays = ui.stayDaysBox->value();
 			//Client A
 			ID[0] = ui.IDA->text();							
@@ -90,6 +92,10 @@ void CheckInForm::book() {
 
 //登记入住
 void CheckInForm::checkIn() {
+	if (ui.checkBookBox->checkState() == Qt::Checked) {
+		bookIn();
+		return;
+	}
 	if (!checkInputStatus()) {
 		showNote(u8"请输入正确的值！", "red", 2000);
 	}
@@ -103,6 +109,7 @@ void CheckInForm::checkIn() {
 			RoomType roomType = RoomType(ui.roomTypeBox->currentText().toInt());
 			RoomBase room(roomID, roomType);
 			roomDB.query(roomID)->setStatus(OCCUPIED);		//很重要
+			sumBill[CHECKIN]++;								//也很重要
 			int stayDays = ui.stayDaysBox->value();
 			//Client A
 			ID[0] = ui.IDA->text();
@@ -127,6 +134,32 @@ void CheckInForm::checkIn() {
 		}
 	}
 }
+
+//登记后入住
+void CheckInForm::bookIn() {
+	long billID = ui.billIDLabel->text().toLong();
+	//billDB	roomDB	sumBill		sumRoom
+	Bill* bill = billDB.query(billID);
+	if (bill == NULL || billID == 0) {
+		showNote(u8"请选择订单!", "red", 2000);
+	}
+	else if (bill->getStatus() == DONE) {
+		showNote(u8"操作失败!该单已完成", "red");
+	}
+	else if (bill->getStatus() == CHECKIN) {
+		showNote(u8"操作失败！该单已登记", "red");
+	}
+	else {
+		bill->checkIn();
+		roomDB.query(bill->getRoomID())->setStatus(OCCUPIED);
+		sumBill[BOOKING]--;
+		sumBill[CHECKIN]++;
+		clearForm();
+		billDB.saveMap();
+		showNote(u8"入住成功！");
+	}
+}
+
 
 
 //更新房间号 （和余量）
@@ -173,6 +206,8 @@ bool CheckInForm::checkInputStatus() {
 //已预订按钮 checkBox
 void CheckInForm::onCheckBookBox(int state) {
 	if (state == Qt::Unchecked) {
+		//预订按钮
+		ui.bookBtn->setEnabled(true);
 		//单双按钮
 		ui.singleClientBtn->setEnabled(true);
 		ui.doubleClientBtn->setEnabled(true);
@@ -190,8 +225,13 @@ void CheckInForm::onCheckBookBox(int state) {
 			ui.nameB->setEnabled(false);
 			ui.IDB->setEnabled(false);
 		}
+		//隐藏订单编号
+		ui.billIDLabel->setVisible(false);
+		ui.ddhLabel->setVisible(false);
 	}
 	else if (state == Qt::Checked) {
+		//预订按钮
+		ui.bookBtn->setEnabled(false);
 		//单双按钮
 		ui.singleClientBtn->setEnabled(false);
 		ui.doubleClientBtn->setEnabled(false);
@@ -205,6 +245,9 @@ void CheckInForm::onCheckBookBox(int state) {
 			ui.nameB->setEnabled(false);
 			ui.IDB->setEnabled(false);
 		}
+		//显示订单编号
+		ui.billIDLabel->setVisible(true);
+		ui.ddhLabel->setVisible(true);
 	}
 }
 //单 双
@@ -236,6 +279,7 @@ void CheckInForm::clearForm() {
 	ui.nameB->clear();
 	ui.IDA->clear();
 	ui.IDB->clear();
+	ui.billIDLabel->clear();
 }
 //提示信息
 void CheckInForm::showNote(QString note, QString color, int time) {
@@ -245,5 +289,32 @@ void CheckInForm::showNote(QString note, QString color, int time) {
 }
 void CheckInForm::hideNote() {
 	ui.noteLabel->clear();
+}
+
+
+//从 Bill 填充		全
+void CheckInForm::fillBill(Bill* bill) {
+	// 房间信息
+	fillRoom(&(bill->room));
+	// Client A
+	ui.nameA->setText(bill->clientA.getName());
+	ui.IDA->setText(bill->clientA.getIDC());
+	// Client B
+	if (bill->isTwo()) {
+		ui.nameB->setText(bill->clientB.getName());
+		ui.IDB->setText(bill->clientB.getIDC());
+	}
+	// 入住天数	和订单号
+	ui.stayDaysBox->setValue(bill->getStayDays());
+	ui.billIDLabel->setText(QString::number(bill->getID()));
+}
+//从 RoomBase 填充		仅BOX
+void CheckInForm::fillRoom(RoomBase* room) {
+	int roomTypeIndex = int(room->getType());
+	ui.roomTypeBox->setCurrentIndex(roomTypeIndex);
+	updateRoomIDBox(roomTypeIndex);
+
+	int index = ui.roomIDBox->findText(QString::number(room->getID()));
+	ui.roomIDBox->setCurrentIndex(index);
 }
 

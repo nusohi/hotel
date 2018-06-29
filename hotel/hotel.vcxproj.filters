@@ -54,6 +54,9 @@
     <ClCompile Include="BookerInfoTable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CheckInWnd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="hotel.h">
@@ -66,6 +69,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="BookerInfoTable.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="CheckInWnd.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

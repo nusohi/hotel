@@ -5,6 +5,9 @@
 #include "Room.h"
 #include "DataBase.h"
 
+extern DataBase<Room> roomDB;
+extern int sumRoom[];
+
 
 
 class RoomInfoTable : public QWidget
@@ -14,11 +17,13 @@ class RoomInfoTable : public QWidget
 public:
 	RoomInfoTable(QWidget *parent = Q_NULLPTR);
 	~RoomInfoTable() {}
-private:
-	Ui::RoomInfoTable ui;
 public:
-	void initial();
+	Ui::RoomInfoTable ui;
+
 public slots:
 	void update(int index);
+
+private:
+	void initial();
 };
 

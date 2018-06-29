@@ -2,8 +2,6 @@
 
 
 
-extern DataBase<Room> roomDB;
-extern int sumRoom[];
 
 RoomInfoTable::RoomInfoTable(QWidget *parent)
 	: QWidget(parent)
@@ -26,6 +24,8 @@ void RoomInfoTable::initial() {
 }
 
 void RoomInfoTable::update(int index) {
+	if (index == -1)	//用来 仅刷新
+		index = ui.roomTypeBox->currentIndex();
 	// index == 0 则是 "所有类型"
 	int sum = index ? sumRoom[index - 1] : roomDB.calSum();
 
@@ -46,6 +46,6 @@ void RoomInfoTable::update(int index) {
 	}
 	//设置滚轮置顶
 	ui.roomInfoTable->verticalScrollBar()->setValue(0);
-	delete rooms;
+	delete[] rooms;
 }
 
