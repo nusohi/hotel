@@ -4,6 +4,7 @@
 #include "RoomInfoTable.h"
 #include "CheckInForm.h"
 #include "BookerInfoTable.h"
+#include "CheckInWnd.h"
 
 
 
@@ -11,7 +12,7 @@
 int main(int argc, char *argv[])
 {
 	QApplication YiTiaoDaHe(argc, argv);
-	hotel w;
+	/*hotel w;
 	w.show();
 
 
@@ -22,7 +23,10 @@ int main(int argc, char *argv[])
 	a.show();
 
 	CheckInForm as;
-	as.show();
+	as.show();*/
+	CheckInWnd a;
+	a.show();
+
 
 	return YiTiaoDaHe.exec();
 }
