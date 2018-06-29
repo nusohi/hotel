@@ -5,6 +5,7 @@
 #include "CheckInForm.h"
 #include "BookerInfoTable.h"
 #include "CheckInWnd.h"
+#include "BillTable.h"
 
 //全局变量
 extern DataBase<Room> roomDB(".\\roomDB.dat");
@@ -30,8 +31,11 @@ int main(int argc, char *argv[])
 	/*hotel w;
 	w.show();*/
 
-	CheckInWnd a;
-	a.show();
+	/*CheckInWnd a;
+	a.show();*/
+
+	BillTable bill;
+	bill.show();
 
 
 	return YiTiaoDaHe.exec();
