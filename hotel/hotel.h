@@ -11,6 +11,7 @@
 extern DataBase<Room> roomDB;
 extern DataBase<Bill> billDB;
 extern int sumRoom[];
+extern int sumBill[];
 
 
 class hotel : public QWidget

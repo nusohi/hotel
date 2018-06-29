@@ -51,6 +51,9 @@
     <ClCompile Include="CheckInForm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BookerInfoTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="hotel.h">
@@ -62,6 +65,9 @@
     <QtMoc Include="CheckInForm.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="BookerInfoTable.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="hotel.ui">
@@ -71,6 +77,9 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="CheckInForm.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="BookerInfoTable.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

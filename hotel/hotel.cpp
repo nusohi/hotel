@@ -4,9 +4,14 @@
 DataBase<Room> roomDB(".\\roomDB.dat");
 DataBase<Bill> billDB(".\\billDB.dat");
 int sumRoom[] = {
-	roomDB.querySum(RoomType(0)),
-	roomDB.querySum(RoomType(1)),
-	roomDB.querySum(RoomType(2))
+	roomDB.querySum(A),
+	roomDB.querySum(B),
+	roomDB.querySum(C)
+};
+int sumBill[] = {
+	billDB.querySum(BOOKING),
+	billDB.querySum(CHECKIN),
+	billDB.querySum(DONE)
 };
 
 

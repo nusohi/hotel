@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>BookerInfoTable</class>
+ <widget class="QWidget" name="BookerInfoTable">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>552</width>
+    <height>354</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>BookerInfoTable</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>已预订信息</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTableWidget" name="bookerTable">
+     <column>
+      <property name="text">
+       <string>单号</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>客户A</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>客户B</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>房间号</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>房间类型</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

@@ -186,6 +186,10 @@ void CheckInForm::onCheckBookBox(int state) {
 			ui.nameB->setEnabled(true);
 			ui.IDB->setEnabled(true);
 		}
+		else {
+			ui.nameB->setEnabled(false);
+			ui.IDB->setEnabled(false);
+		}
 	}
 	else if (state == Qt::Checked) {
 		//单双按钮
@@ -196,19 +200,22 @@ void CheckInForm::onCheckBookBox(int state) {
 		ui.roomIDBox->setEnabled(false);
 		ui.stayDaysBox->setEnabled(false);
 		//文本编辑框
-		ui.nameB->setEnabled(false);
-		ui.IDB->setEnabled(false);
 		ui.IDA->setEnabled(false);
+		if (ui.doubleClientBtn->isChecked()) {
+			ui.nameB->setEnabled(false);
+			ui.IDB->setEnabled(false);
+		}
 	}
 }
 //单 双
 void CheckInForm::onSingleClientBtn() {
 	if (ui.singleClientBtn->isChecked()) {
-		ui.nameB->setEnabled(false);
-		ui.IDB->setEnabled(false);
+		ui.nameB->setDisabled(true);
+		ui.IDB->setDisabled(true);
 	}
 	else {
-		onDoubleClientBtn();
+		ui.nameB->setEnabled(true);
+		ui.IDB->setEnabled(true);
 	}
 }
 void CheckInForm::onDoubleClientBtn() {
@@ -217,7 +224,8 @@ void CheckInForm::onDoubleClientBtn() {
 		ui.IDB->setEnabled(true);
 	}
 	else {
-		onSingleClientBtn();
+		ui.nameB->setDisabled(true);
+		ui.IDB->setDisabled(true);
 	}
 }
 

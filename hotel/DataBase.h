@@ -16,8 +16,10 @@ public:
 	T* query(long ID);
 	T* query(string QName);
 	T** query(RoomType roomType);
-	int querySum(RoomType roomType);
+	T** query(BillStatus billStatus);
 	long* queryID(RoomType roomType);
+	int querySum(RoomType roomType);
+	int querySum(BillStatus billType);
 	T** showAll();
 
 	bool isEmpty();
@@ -96,26 +98,46 @@ T* DataBase<T>::query(string QName) {
 
 template<class T>
 T** DataBase<T>::query(RoomType roomType) {
+	if ((int)roomType == -1) {
+		return showAll();
+	}
 	int sum = calSum();
 	T ** rooms = new T*[sum];
 
 	int i = 0;
 	maptype::iterator iter;
-	if ((int)roomType == -1) {
-		for (iter = dataMap.begin(); iter != dataMap.end(); iter++) {
+	for (iter = dataMap.begin(); iter != dataMap.end(); iter++) {
+		if (iter->second.getType() == roomType) {
 			rooms[i++] = &(iter->second);
 		}
 	}
-	else {
-		for (iter = dataMap.begin(); iter != dataMap.end(); iter++) {
-			if (iter->second.getType() == roomType) {
-				rooms[i++] = &(iter->second);
-			}
-		}
-		for (int j = i; j < sum; j++)
-			rooms[j] = NULL;
-	}
+	for (int j = i; j < sum; j++)
+		rooms[j] = NULL;
+
 	return rooms;
+}
+
+template<class T>
+T** DataBase<T>::query(BillStatus billStatus) {
+	
+	if ((int)billStatus == -1) {
+		return showAll();
+	}
+	int sum = calSum();
+	T ** bills = new T*[sum];
+
+	int i = 0;
+	maptype::iterator iter;
+	for (iter = dataMap.begin(); iter != dataMap.end(); iter++) {
+		if (iter->second.getStatus() == billStatus) {
+			bills[i++] = &(iter->second);
+		}
+	}
+	for (int j = i; j < sum; j++) {
+		delete bills[j];
+		bills[j] = NULL;
+	}
+	return bills;
 }
 
 template<class T>
@@ -130,6 +152,17 @@ int DataBase<T>::querySum(RoomType roomType) {
 	return sum;
 }
 
+template<class T>
+int DataBase<T>::querySum(BillStatus billStatus) {
+	int sum = 0;
+	maptype::iterator iter;
+	for (iter = dataMap.begin(); iter != dataMap.end(); iter++) {
+		if (iter->second.getStatus() == billStatus) {
+			sum++;
+		}
+	}
+	return sum;
+}
 
 template<class T>
 long* DataBase<T>::queryID(RoomType roomType) {
