@@ -60,6 +60,12 @@
     <ClCompile Include="BillTable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BossCtrl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LogInForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="hotel.h">
@@ -80,6 +86,12 @@
     <QtMoc Include="BillTable.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="BossCtrl.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="LogInForm.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="hotel.ui">
@@ -95,6 +107,12 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="BillTable.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="BossCtrl.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="LogInForm.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

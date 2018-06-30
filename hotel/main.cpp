@@ -6,6 +6,8 @@
 #include "BookerInfoTable.h"
 #include "CheckInWnd.h"
 #include "BillTable.h"
+#include "BossCtrl.h"
+#include "LogInForm.h"
 
 //全局变量
 extern DataBase<Room> roomDB(".\\roomDB.dat");
@@ -30,12 +32,17 @@ int main(int argc, char *argv[])
 
 	/*hotel w;
 	w.show();*/
+	/*RoomInfoTable r1; r1.show();
+	CheckInForm f1; f1.show();
+	BookerInfoTable b1; b1.show();
+	CheckInWnd c1; c1.show();
+	BillTable b2; b2.show();*/
 
-	/*CheckInWnd a;
-	a.show();*/
+	BossCtrl GOD;
+	GOD.show();
 
-	BillTable bill;
-	bill.show();
+	LogInForm yi;
+	yi.show();
 
 
 	return YiTiaoDaHe.exec();
