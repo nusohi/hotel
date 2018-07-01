@@ -20,6 +20,8 @@ public slots:
 	//ÇÐ»»Ä£Ê½
 	void billOnModel();
 	void billOffModel();
+	void roomOnModel();
+	void roomOffModel();
 private:
 	void initial();
 

@@ -78,6 +78,9 @@
     <ClCompile Include="CheckOutWnd.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DeleteRoomWnd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="hotel.h">
@@ -116,6 +119,9 @@
     <QtMoc Include="CheckOutWnd.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="DeleteRoomWnd.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="hotel.ui">
@@ -146,6 +152,9 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="CheckOutForm.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="DeleteRoomWnd.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

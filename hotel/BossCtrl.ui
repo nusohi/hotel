@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>261</width>
-    <height>202</height>
+    <width>275</width>
+    <height>170</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,18 +15,22 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QPushButton" name="addRoomBtn">
-     <property name="text">
-      <string>添加房间</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPushButton" name="deleteRoomBtn">
-     <property name="text">
-      <string>删除房间</string>
-     </property>
-    </widget>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QPushButton" name="showRoomBtn">
+       <property name="text">
+        <string>显示房间操作</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="closeRoomBtn">
+       <property name="text">
+        <string>隐藏房间操作</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">

@@ -25,8 +25,9 @@ class Ui_BossCtrl
 {
 public:
     QVBoxLayout *verticalLayout;
-    QPushButton *addRoomBtn;
-    QPushButton *deleteRoomBtn;
+    QHBoxLayout *horizontalLayout_2;
+    QPushButton *showRoomBtn;
+    QPushButton *closeRoomBtn;
     QHBoxLayout *horizontalLayout;
     QPushButton *showBillBtn;
     QPushButton *closeBillBtn;
@@ -36,20 +37,26 @@ public:
     {
         if (BossCtrl->objectName().isEmpty())
             BossCtrl->setObjectName(QStringLiteral("BossCtrl"));
-        BossCtrl->resize(261, 202);
+        BossCtrl->resize(275, 170);
         verticalLayout = new QVBoxLayout(BossCtrl);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        addRoomBtn = new QPushButton(BossCtrl);
-        addRoomBtn->setObjectName(QStringLiteral("addRoomBtn"));
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setSpacing(6);
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        showRoomBtn = new QPushButton(BossCtrl);
+        showRoomBtn->setObjectName(QStringLiteral("showRoomBtn"));
 
-        verticalLayout->addWidget(addRoomBtn);
+        horizontalLayout_2->addWidget(showRoomBtn);
 
-        deleteRoomBtn = new QPushButton(BossCtrl);
-        deleteRoomBtn->setObjectName(QStringLiteral("deleteRoomBtn"));
+        closeRoomBtn = new QPushButton(BossCtrl);
+        closeRoomBtn->setObjectName(QStringLiteral("closeRoomBtn"));
 
-        verticalLayout->addWidget(deleteRoomBtn);
+        horizontalLayout_2->addWidget(closeRoomBtn);
+
+
+        verticalLayout->addLayout(horizontalLayout_2);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(6);
@@ -81,8 +88,8 @@ public:
     void retranslateUi(QWidget *BossCtrl)
     {
         BossCtrl->setWindowTitle(QApplication::translate("BossCtrl", "BossCtrl", Q_NULLPTR));
-        addRoomBtn->setText(QApplication::translate("BossCtrl", "\346\267\273\345\212\240\346\210\277\351\227\264", Q_NULLPTR));
-        deleteRoomBtn->setText(QApplication::translate("BossCtrl", "\345\210\240\351\231\244\346\210\277\351\227\264", Q_NULLPTR));
+        showRoomBtn->setText(QApplication::translate("BossCtrl", "\346\230\276\347\244\272\346\210\277\351\227\264\346\223\215\344\275\234", Q_NULLPTR));
+        closeRoomBtn->setText(QApplication::translate("BossCtrl", "\351\232\220\350\227\217\346\210\277\351\227\264\346\223\215\344\275\234", Q_NULLPTR));
         showBillBtn->setText(QApplication::translate("BossCtrl", "\346\230\276\347\244\272\350\264\246\345\215\225", Q_NULLPTR));
         closeBillBtn->setText(QApplication::translate("BossCtrl", "\345\205\263\351\227\255\350\264\246\345\215\225", Q_NULLPTR));
         outputBillBtn->setText(QApplication::translate("BossCtrl", "\350\264\246\345\215\225\350\276\223\345\207\272", Q_NULLPTR));

@@ -24,9 +24,7 @@ void AddRoomWnd::initial() {
 	QValidator *ValIDigitOnly = new QRegExpValidator(digitOnly, this);
 	ui.IDEdit->setValidator(ValIDigitOnly);
 
-	//初始化
-	ui.IDEdit->clear();
-	ui.typeBox->setCurrentIndex(0);
+
 	ui.noteLabel->setText(u8"输入房间号添加新房.");
 }
 
