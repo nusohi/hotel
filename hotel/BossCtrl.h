@@ -1,7 +1,8 @@
 #pragma once
-
 #include <QWidget>
 #include "ui_BossCtrl.h"
+
+
 
 class BossCtrl : public QWidget
 {
@@ -10,7 +11,17 @@ class BossCtrl : public QWidget
 public:
 	BossCtrl(QWidget *parent = Q_NULLPTR);
 	~BossCtrl() {}
-
-private:
+public:
 	Ui::BossCtrl ui;
+public slots:
+	//禁用与解禁
+	void enable();
+	void disable();
+	//切换模式
+	void billOnModel();
+	void billOffModel();
+private:
+	void initial();
+
 };
+

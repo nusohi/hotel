@@ -66,6 +66,9 @@
     <ClCompile Include="LogInForm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AddRoomWnd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="hotel.h">
@@ -92,6 +95,9 @@
     <QtMoc Include="LogInForm.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="AddRoomWnd.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="hotel.ui">
@@ -113,6 +119,9 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="LogInForm.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="AddRoomWnd.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

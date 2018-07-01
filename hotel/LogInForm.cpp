@@ -7,7 +7,8 @@ LogInForm::LogInForm(QWidget *parent)
 	initial();
 
 	//登录按钮
-	QObject::connect(ui.signInBtn,	SIGNAL(clicked(bool)),	this, SLOT(signIn()));
+	QObject::connect(ui.signInBtn,		SIGNAL(clicked(bool)),		this, SLOT(signIn()));
+	QObject::connect(ui.passwordEdit,	SIGNAL(returnPressed()),	this, SLOT(signIn()));
 	//退出登录按钮
 	QObject::connect(ui.signOutBtn, SIGNAL(clicked(bool)),	this, SLOT(signOut()));
 	//-----计时器--隐藏提示
@@ -45,6 +46,7 @@ void LogInForm::signOut() {
 	showNote(u8"已退出登录！", "blue", 5000);
 }
 
+//切换模式
 void LogInForm::signInModel() {
 	//切换按钮
 	ui.signInBtn->setVisible(true);

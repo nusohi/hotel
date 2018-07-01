@@ -30,9 +30,10 @@ public slots:
 
 private:
 	void initial();
+	//切换模式
 	void signInModel();
 	void signOutModel();
-
+	
 	bool pass;
 	//计时器
 	QTimer* timer;
