@@ -17,6 +17,8 @@ BossCtrl::BossCtrl(QWidget *parent)
 void BossCtrl::initial() {
 	ui.closeBillBtn->setVisible(false);
 	ui.closeRoomBtn->setVisible(false);
+
+	this->setFixedSize(280, 220);
 ///	disable();
 }
 

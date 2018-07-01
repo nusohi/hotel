@@ -15,7 +15,7 @@ AddRoomWnd::AddRoomWnd(QWidget *parent)
 
 
 void AddRoomWnd::initial() {
-	setFixedSize(500, 150);
+	setFixedSize(400, 150);
 	//计时器	供noteLabel用
 	timer = new QTimer(this);
 

@@ -24,6 +24,8 @@ public slots:
 	//提示信息	
 	void showNote(QString note, QString color = "black", int time = 3000);
 	void hideNote();
+public:
+	void fillRoom(RoomBase* room);
 private:
 	void initial();
 	QTimer* timer;

@@ -18,7 +18,7 @@ class AddRoomWnd : public QWidget
 public:
 	AddRoomWnd(QWidget *parent = Q_NULLPTR);
 	~AddRoomWnd() {}
-private:
+public:
 	Ui::AddRoomWnd ui;
 public slots:
 	void addRoom();

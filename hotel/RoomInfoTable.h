@@ -22,6 +22,7 @@ public:
 
 public slots:
 	void update(int index);
+	void refresh();
 
 private:
 	void initial();

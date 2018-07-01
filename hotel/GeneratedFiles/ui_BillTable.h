@@ -85,6 +85,11 @@ public:
         QTableWidgetItem *__qtablewidgetitem8 = new QTableWidgetItem();
         billTable->setHorizontalHeaderItem(8, __qtablewidgetitem8);
         billTable->setObjectName(QStringLiteral("billTable"));
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(billTable->sizePolicy().hasHeightForWidth());
+        billTable->setSizePolicy(sizePolicy);
 
         verticalLayout->addWidget(billTable);
 

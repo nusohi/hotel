@@ -16,6 +16,8 @@ public:
 public:
 	Ui::LogInForm ui;
 
+signals:
+	void passChanged(bool);
 public slots:
 	//µÇÂ¼
 	void signIn();

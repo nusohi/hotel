@@ -18,6 +18,7 @@ LogInForm::LogInForm(QWidget *parent)
 
 void LogInForm::initial() {
 	pass = false;
+	this->setFixedSize(280,200);
 	//暂时固定账户和密码
 	ui.userNameEdit->setText(u8"admin");
 	ui.userNameEdit->setDisabled(true);
@@ -34,6 +35,7 @@ void LogInForm::signIn() {
 	if (checkPassword()) {
 		pass = true;
 		signOutModel();
+		emit passChanged(pass);
 		showNote(u8"登录成功！");
 	}
 	else {

@@ -49,3 +49,8 @@ void RoomInfoTable::update(int index) {
 	delete[] rooms;
 }
 
+
+void RoomInfoTable::refresh() {
+	int index = ui.roomTypeBox->currentIndex();
+	update(index);
+}

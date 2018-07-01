@@ -15,7 +15,7 @@ DeleteRoomWnd::DeleteRoomWnd(QWidget *parent)
 
 
 void DeleteRoomWnd::initial() {
-	setFixedSize(500, 150);
+	setFixedSize(400, 150);
 	//计时器	供noteLabel用
 	timer = new QTimer(this);
 	//正则表达式 验证输入的房间号为数字
@@ -48,6 +48,13 @@ void DeleteRoomWnd::deleteRoom() {
 		ui.IDEdit->selectAll();
 	}
 }
+
+//从 Room 填充
+void DeleteRoomWnd::fillRoom(RoomBase* room) {
+	ui.IDEdit->setText(QString::number(room->getID()));
+}
+
+
 
 
 //提示信息
