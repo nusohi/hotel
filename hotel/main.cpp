@@ -1,5 +1,4 @@
 #include <QtWidgets/QApplication>
-#include <QVBoxLayout>
 #include "hotel.h"
 #include "RoomInfoTable.h"
 #include "CheckInForm.h"
@@ -9,6 +8,8 @@
 #include "BossCtrl.h"
 #include "LogInForm.h"
 #include "AddRoomWnd.h"
+#include "OuterTable.h"
+#include "CheckOutForm.h"
 
 //全局变量
 extern DataBase<Room> roomDB(".\\roomDB.dat");
@@ -33,20 +34,19 @@ int main(int argc, char *argv[])
 	/*hotel w;
 	w.show();*/
 
-	RoomInfoTable r1; r1.show();
-	CheckInForm f1; f1.show();
-	BookerInfoTable b1; b1.show();
-	CheckInWnd c1; c1.show();
-	BillTable b2; b2.show();
+	//RoomInfoTable r1; r1.show();
+	//CheckInForm f1; f1.show();
+	//BookerInfoTable b1; b1.show();
+	//CheckInWnd c1; c1.show();
+	//BillTable b2; b2.show();
 
-	BossCtrl GOD;
-	GOD.show();
+	//BossCtrl GOD; GOD.show();
+	//LogInForm yi; yi.show();
+	//AddRoomWnd add; add.show();
 
-	LogInForm yi;
-	yi.show();
+	OuterTable out; out.show();
 
-	AddRoomWnd add;
-	add.show();
+	CheckOutForm kk; kk.show();
 
 
 	return YiTiaoDaHe.exec();
