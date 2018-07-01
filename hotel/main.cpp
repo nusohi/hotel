@@ -1,20 +1,7 @@
-#include <QtWidgets/QApplication>
+Ôªø#include <QtWidgets/QApplication>
 #include "hotel.h"
-#include "RoomInfoTable.h"
-#include "CheckInForm.h"
-#include "BookerInfoTable.h"
-#include "CheckInWnd.h"
-#include "BillTable.h"
-#include "BossCtrl.h"
-#include "LogInForm.h"
-#include "AddRoomWnd.h"
-#include "OuterTable.h"
-#include "CheckOutForm.h"
-#include "CheckOutWnd.h"
-#include "DeleteRoomWnd.h"
-#include "BossWnd.h"
 
-//»´æ÷±‰¡ø
+//ÂÖ®Â±ÄÂèòÈáè
 extern DataBase<Room> roomDB(".\\roomDB.dat");
 extern DataBase<Bill> billDB(".\\billDB.dat");
 extern int sumRoom[] = {
@@ -34,27 +21,8 @@ extern int sumBill[] = {
 int main(int argc, char *argv[])
 {
 	QApplication YiTiaoDaHe(argc, argv);
-	/*hotel w;
-	w.show();*/
-
-	//CheckInForm f1; f1.show();
-	//RoomInfoTable r1; r1.show();
-	//BookerInfoTable b1; b1.show();
-	///CheckInWnd c1; c1.show();
-//
-//	BillTable b2; b2.show();
-////
-//	AddRoomWnd add; add.show();
-//	BossCtrl GOD; GOD.show();
-//	LogInForm yi; yi.show();
-
-	//OuterTable out; out.show();
-	//CheckOutForm kk; kk.show();
-	///CheckOutWnd oo; oo.show();
-
-//	DeleteRoomWnd del; del.show();
-
-	BossWnd bos; bos.show();
-
+	hotel BoLangKuan;
+	BoLangKuan.show();
 	return YiTiaoDaHe.exec();
 }
+

@@ -18,7 +18,8 @@ LogInForm::LogInForm(QWidget *parent)
 
 void LogInForm::initial() {
 	pass = false;
-	this->setFixedSize(280,200);
+	this->setFixedSize(280, 160);
+
 	//暂时固定账户和密码
 	ui.userNameEdit->setText(u8"admin");
 	ui.userNameEdit->setDisabled(true);

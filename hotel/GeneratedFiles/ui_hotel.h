@@ -26,7 +26,7 @@ public:
     {
         if (hotelClass->objectName().isEmpty())
             hotelClass->setObjectName(QStringLiteral("hotelClass"));
-        hotelClass->resize(600, 400);
+        hotelClass->resize(936, 710);
 
         retranslateUi(hotelClass);
 

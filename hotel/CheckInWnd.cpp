@@ -17,9 +17,7 @@ CheckInWnd::CheckInWnd(QWidget* parent)
 	//初始状态为登记,预订订单不显示
 	bookerInfoTable.setVisible(false);
 	//初始化	设置大小
-	this->resize(700, 600);
-	this->setMinimumSize(600, 400);
-	this->setMaximumSize(800, 800);
+	this->resize(1000, 800);
 
 
 	QObject::connect(checkInForm.ui.bookBtn,			SIGNAL(clicked(bool)),					this, SLOT(refreshTables()));
