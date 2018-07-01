@@ -10,6 +10,7 @@
 #include "AddRoomWnd.h"
 #include "OuterTable.h"
 #include "CheckOutForm.h"
+#include "CheckOutWnd.h"
 
 //全局变量
 extern DataBase<Room> roomDB(".\\roomDB.dat");
@@ -34,20 +35,20 @@ int main(int argc, char *argv[])
 	/*hotel w;
 	w.show();*/
 
-	//RoomInfoTable r1; r1.show();
 	//CheckInForm f1; f1.show();
+	//RoomInfoTable r1; r1.show();
 	//BookerInfoTable b1; b1.show();
-	//CheckInWnd c1; c1.show();
+	CheckInWnd c1; c1.show();
+
 	//BillTable b2; b2.show();
 
-	//BossCtrl GOD; GOD.show();
-	//LogInForm yi; yi.show();
 	//AddRoomWnd add; add.show();
+	//BossCtrl GOD; GOD.show();
+	LogInForm yi; yi.show();
 
-	OuterTable out; out.show();
-
-	CheckOutForm kk; kk.show();
-
+	//OuterTable out; out.show();
+	//CheckOutForm kk; kk.show();
+	CheckOutWnd oo; oo.show();
 
 	return YiTiaoDaHe.exec();
 }

@@ -20,7 +20,7 @@ class CheckOutForm : public QWidget
 public:
 	CheckOutForm(QWidget *parent = Q_NULLPTR);
 	~CheckOutForm() {}
-private:
+public:
 	Ui::CheckOutForm ui;
 public slots:
 	void checkOut();

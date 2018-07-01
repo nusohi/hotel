@@ -19,7 +19,7 @@ class OuterTable : public QWidget
 public:
 	OuterTable(QWidget *parent = Q_NULLPTR);
 	~OuterTable() {}
-private:
+public:
 	Ui::OuterTable ui;
 public slots:
 	void update();

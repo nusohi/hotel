@@ -19,6 +19,8 @@ void OuterTable::initial() {
 	ui.table->verticalHeader()->setVisible(false);
 	ui.table->horizontalHeader()->setVisible(true);
 	ui.table->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+	//列宽调整
+	ui.table->horizontalHeader()->setSectionResizeMode(0, QHeaderView::ResizeToContents);	//单号
 }
 
 void OuterTable::update() {
