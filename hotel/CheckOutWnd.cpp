@@ -12,10 +12,6 @@ CheckOutWnd::CheckOutWnd(QWidget* parent)
 	layout->addWidget(&checkOutForm);
 	layout->addWidget(&outerTable);
 	this->setLayout(layout);
-	//窗口大小
-	this->setMinimumSize(750, 500);
-	this->setMaximumSize(900, 700);
-	this->resize(800, 600);
 
 
 	//退房后刷新表格
@@ -30,5 +26,10 @@ void CheckOutWnd::chooseBill(int row, int col) {
 	//用 Bill 填充
 	checkOutForm.fillBill(billDB.query(billID));
 	checkOutForm.showNote(u8"已加载预订订单!", "blue", 2000);
+}
+
+
+void CheckOutWnd::refresh() {
+	outerTable.update();
 }
 

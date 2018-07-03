@@ -32,7 +32,7 @@ void hotel::initial() {
 	headMenu.ui.inPartBtn->setChecked(true);
 	inPartModel();
 	//ด๓ะก
-	this->setFixedSize(1000, 800);
+	this->setFixedSize(1100, 800);
 }
 
 void hotel::change() {
@@ -51,15 +51,18 @@ void hotel::inPartModel() {
 	checkInWnd.setVisible(true);
 	checkOutWnd.setVisible(false);
 	bossWnd.setVisible(false);
+	checkInWnd.refresh();
 }
 void hotel::outPartModel() {
 	checkInWnd.setVisible(false);
 	checkOutWnd.setVisible(true);
 	bossWnd.setVisible(false);
+	checkOutWnd.refresh();
 }
 void hotel::bossPartModel(){
 	checkInWnd.setVisible(false);
 	checkOutWnd.setVisible(false);
 	bossWnd.setVisible(true);
+	bossWnd.refresh();
 }
 

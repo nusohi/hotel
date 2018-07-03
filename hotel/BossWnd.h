@@ -30,6 +30,8 @@ public slots:
 	void billModelOff();
 	void roomModelOn();
 	void roomModelOff();
+	//Ë¢ÐÂ
+	void refresh();
 
 private:
 	void initial();

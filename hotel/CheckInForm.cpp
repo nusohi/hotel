@@ -174,7 +174,7 @@ void CheckInForm::updateRoomIDBox(int index) {
 		ui.roomIDBox->insertItem(i, QString::number(roomID[i]));
 	//更新余量显示
 	ui.leftRoomLabel->setText(QString::number(sumRoom[index]));
-	delete roomID;
+	//delete roomID;
 }
 
 //检查表单

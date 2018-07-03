@@ -19,6 +19,7 @@ public:
 	~CheckOutWnd() {}
 public slots:
 	void chooseBill(int row, int col);
+	void refresh();
 
 public:
 	CheckOutForm checkOutForm;

@@ -47,6 +47,7 @@ void AddRoomWnd::addRoom() {
 
 			QString noteType = RoomTypeToQString(RoomType(index));
 			showNote(noteType + QString::number(roomID) + u8"Ìí¼Ó³É¹¦£¡");
+			roomDB.saveMap();
 		}
 	}
 	ui.IDEdit->selectAll();

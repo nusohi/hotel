@@ -44,6 +44,7 @@ void DeleteRoomWnd::deleteRoom() {
 			sumRoom[int(room->getType())]--;	//要在前面，roomDB删除room后room指向未知
 			roomDB.Delete(roomID);
 			showNote(u8"成功删除！", "blue");
+			roomDB.saveMap();
 		}
 		ui.IDEdit->selectAll();
 	}

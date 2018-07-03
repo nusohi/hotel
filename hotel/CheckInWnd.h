@@ -18,7 +18,7 @@ public:
 	CheckInWnd(QWidget* parent = NULL);
 	~CheckInWnd() {}
 public slots:
-	void refreshTables();
+	void refresh();
 	void onChangeModel(int state);
 	void chooseRoom(int row, int col);
 	void chooseBill(int row, int col);

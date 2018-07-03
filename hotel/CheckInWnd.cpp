@@ -16,8 +16,6 @@ CheckInWnd::CheckInWnd(QWidget* parent)
 	this->setLayout(layout);
 	//初始状态为登记,预订订单不显示
 	bookerInfoTable.setVisible(false);
-	//初始化	设置大小
-	this->resize(1000, 800);
 
 
 	QObject::connect(checkInForm.ui.bookBtn,			SIGNAL(clicked(bool)),					this, SLOT(refreshTables()));
@@ -42,7 +40,7 @@ void CheckInWnd::onChangeModel(int state) {
 }
 
 //更新两个表格
-void CheckInWnd::refreshTables() {
+void CheckInWnd::refresh() {
 	roomInfoTable.update(-1);
 	bookerInfoTable.update();
 }

@@ -116,3 +116,9 @@ void BossWnd::hideRoomCtrl() {
 	deleteRoomWnd.setVisible(false);
 }
 
+//Ë¢ÐÂ±í¸ñ
+void BossWnd::refresh() {
+	billTable.update(-1);
+	roomInfoTable.update(-1);
+}
+
