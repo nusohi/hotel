@@ -66,3 +66,7 @@ void hotel::bossPartModel(){
 	bossWnd.refresh();
 }
 
+void hotel::closeEvent(QCloseEvent *event) {
+	roomDB.saveMap();
+	billDB.saveMap();
+}

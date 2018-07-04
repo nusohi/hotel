@@ -166,7 +166,7 @@ int DataBase<T>::querySum(BillStatus billStatus) {
 template<class T>
 long* DataBase<T>::queryID(RoomType roomType) {
 	int sum = calSum();
-	long * roomID = new long[sum] {0};
+	long * roomID = new long[sum];
 
 	int rightSum = 0;
 	maptype::iterator iter;
@@ -177,7 +177,7 @@ long* DataBase<T>::queryID(RoomType roomType) {
 		}
 	}
 	for (int i = rightSum; i < sum; i++)
-		roomID[i] = NULL;
+		roomID[i] = 0;
 	return roomID;	//´ý´í
 }
 

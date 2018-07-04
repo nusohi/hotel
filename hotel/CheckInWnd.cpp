@@ -18,8 +18,8 @@ CheckInWnd::CheckInWnd(QWidget* parent)
 	bookerInfoTable.setVisible(false);
 
 
-	QObject::connect(checkInForm.ui.bookBtn,			SIGNAL(clicked(bool)),					this, SLOT(refreshTables()));
-	QObject::connect(checkInForm.ui.checkInBtn,			SIGNAL(clicked(bool)),					this, SLOT(refreshTables()));
+	QObject::connect(checkInForm.ui.bookBtn,			SIGNAL(clicked(bool)),					this, SLOT(refresh()));
+	QObject::connect(checkInForm.ui.checkInBtn,			SIGNAL(clicked(bool)),					this, SLOT(refresh()));
 	QObject::connect(checkInForm.ui.checkBookBox,		SIGNAL(stateChanged(int)),				this, SLOT(onChangeModel(int)));
 	QObject::connect(roomInfoTable.ui.roomInfoTable,	SIGNAL(cellDoubleClicked(int, int)),	this, SLOT(chooseRoom(int, int)));
 	QObject::connect(bookerInfoTable.ui.bookerTable,	SIGNAL(cellDoubleClicked(int, int)),	this, SLOT(chooseBill(int, int)));

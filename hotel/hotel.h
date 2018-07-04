@@ -1,6 +1,7 @@
 #pragma once
 #include <QtWidgets/QWidget>
 #include <qboxlayout.h>
+#include <QCloseEvent>
 #include "ui_hotel.h"
 #include "HeadMenu.h"
 #include "CheckInWnd.h"
@@ -15,6 +16,7 @@ class hotel : public QWidget
 
 public:
 	hotel(QWidget *parent = Q_NULLPTR);
+	void closeEvent(QCloseEvent *event);
 private:
 	Ui::hotelClass ui;
 
