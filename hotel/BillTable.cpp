@@ -62,6 +62,7 @@ void BillTable::update(int index) {
 				ui.billTable->setItem(i, 8, new QTableWidgetItem(bills[i]->checkOutTime.Day_Time()));
 			}
 		}
+		ui.billTable->setItem(i, 9, new QTableWidgetItem(QString::number(bills[i]->calMoney())));
 		//¾ÓÖÐ
 		for (int j = 0; j < 7 + int(billStatus); j++)
 			ui.billTable->item(i, j)->setTextAlignment(Qt::AlignCenter);

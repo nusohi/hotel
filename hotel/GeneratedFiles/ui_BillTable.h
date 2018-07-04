@@ -64,8 +64,8 @@ public:
         verticalLayout->addLayout(horizontalLayout);
 
         billTable = new QTableWidget(BillTable);
-        if (billTable->columnCount() < 9)
-            billTable->setColumnCount(9);
+        if (billTable->columnCount() < 10)
+            billTable->setColumnCount(10);
         QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
         billTable->setHorizontalHeaderItem(0, __qtablewidgetitem);
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
@@ -84,6 +84,8 @@ public:
         billTable->setHorizontalHeaderItem(7, __qtablewidgetitem7);
         QTableWidgetItem *__qtablewidgetitem8 = new QTableWidgetItem();
         billTable->setHorizontalHeaderItem(8, __qtablewidgetitem8);
+        QTableWidgetItem *__qtablewidgetitem9 = new QTableWidgetItem();
+        billTable->setHorizontalHeaderItem(9, __qtablewidgetitem9);
         billTable->setObjectName(QStringLiteral("billTable"));
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
@@ -128,6 +130,8 @@ public:
         ___qtablewidgetitem7->setText(QApplication::translate("BillTable", "\345\205\245\344\275\217\346\227\266\351\227\264", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem8 = billTable->horizontalHeaderItem(8);
         ___qtablewidgetitem8->setText(QApplication::translate("BillTable", "\351\200\200\346\210\277\346\227\266\351\227\264", Q_NULLPTR));
+        QTableWidgetItem *___qtablewidgetitem9 = billTable->horizontalHeaderItem(9);
+        ___qtablewidgetitem9->setText(QApplication::translate("BillTable", "\351\207\221\351\242\235", Q_NULLPTR));
     } // retranslateUi
 
 };

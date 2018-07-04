@@ -13,8 +13,8 @@ BossWnd::BossWnd(QWidget* parent)
 
 
 	//µÇÂ¼
-	QObject::connect(&logInForm,				SIGNAL(passChanged(bool)), this, SLOT(signIn()));
-	QObject::connect(logInForm.ui.signOutBtn, SIGNAL(clicked(bool)), this, SLOT(signOut()));
+	QObject::connect(&logInForm,				SIGNAL(passChanged(bool)),	this, SLOT(signIn()));
+	QObject::connect(logInForm.ui.signOutBtn,	SIGNAL(clicked(bool)),		this, SLOT(signOut()));
 	//ÇÐ»»Ä£Ê½
 	QObject::connect(bossCtrl.ui.showRoomBtn,	SIGNAL(clicked(bool)), this, SLOT(roomModelOn()));
 	QObject::connect(bossCtrl.ui.closeRoomBtn,	SIGNAL(clicked(bool)), this, SLOT(roomModelOff()));
@@ -68,6 +68,8 @@ void BossWnd::signOut() {
 	bossCtrl.disable();
 	hideBillTable();
 	hideRoomCtrl();
+	bossCtrl.billOffModel();
+	bossCtrl.roomOffModel();
 }
 
 

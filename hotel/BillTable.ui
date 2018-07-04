@@ -115,6 +115,11 @@
        <string>退房时间</string>
       </property>
      </column>
+     <column>
+      <property name="text">
+       <string>金额</string>
+      </property>
+     </column>
     </widget>
    </item>
   </layout>

@@ -22,6 +22,9 @@ int main(int argc, char *argv[])
 {
 	QApplication YiTiaoDaHe(argc, argv);
 	hotel BoLangKuan;
+	BoLangKuan.setWindowTitle(u8"宾馆住宿管理系统");	//密码123123
+	QIcon icon(".\\hi.ico");
+	BoLangKuan.setWindowIcon(icon);
 	BoLangKuan.show();
 	return YiTiaoDaHe.exec();
 }
